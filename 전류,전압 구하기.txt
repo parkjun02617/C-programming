@@ -1,0 +1,62 @@
+#include <stdio.h>
+int main (void)
+{
+ int v;
+ 
+
+ printf("초기 전압값을 설정하시오.\n");
+ scanf("%d", &v);
+
+ int i; int j;
+ int a; int b[5];
+ int c; float d[5];
+ 
+ int u; int r;
+ float sum=0;
+ float Sum=0;
+ float x;
+
+ printf("직렬 저항의 개수를 입력하시오.\n");
+ scanf("%d", &i);
+
+ for(a=0; a<i; a++)
+ {
+  printf("저항값들을 입력하시오.\n");
+  scanf("%d", &b[a]);
+  sum+=b[a];
+ }
+ 
+ 
+ printf("직렬저항의 합 : %f", sum);
+
+ 
+
+ 
+
+ printf("병렬 저항의 개수를 입력하시오.\n");
+ scanf("%d", &j);
+
+ for(c=0; c<j; c++)
+ {
+  printf("저항값들을 입력하시오.\n");
+  scanf("%f", &d[c]);
+  Sum+=(1/d[c]);
+ }
+ 
+ printf("병렬저항의 합:%f", (1/Sum));
+
+ 
+ printf("전체 합성저항:%f", sum+(1/Sum));
+
+ printf("전체 전류:%f", v/(sum+(1/Sum)));
+
+ for(c=0; c<j; c++)
+ {
+
+ printf("각 전류:%f", (v- sum*v/(sum+(1/Sum)))/d[c]);
+ }
+
+ 
+
+ return 0;
+

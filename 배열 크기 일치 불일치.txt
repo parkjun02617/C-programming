@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+void copy_array(int arr1[], int arr2[], int n)
+{
+
+   int i;
+   printf("함O수uo의C 크ⓒ기푔 : ");
+   scanf_s("%d", &n);
+
+   for(i=0;i<n;i++)
+   {
+      printf("원?ø소uO입O력짞 ; ");
+      scanf_s("%d",&arr1[i]);
+      arr2[i]=arr1[i];
+   }
+   printf("arr1[%d]=[",i);
+   for(i=0;i<n;i++)
+   {
+      printf("%d,",arr1[i]);
+   }
+   printf("]\n");
+
+   printf("arr2[%d]=[",i);
+   for (i=0;i<n;i++)
+   {
+      printf("%d,",arr2[i]);
+   }
+
+}
+int isequal_array(int arr1[], int ar2[], int size1, int size2)
+{
+   printf("함O수uo1의C 크ⓒ기푔 : ");
+   scanf_s("%d",&size1);
+   printf("함O수uo2의C 크ⓒ기푔 : ");
+   scanf_s("%d",&size2);
+
+   if(size1==size2)
+      return 1;
+   else
+      return 0;
+}
+int main()
+{
+   int n=0, size1 =0, size2=0;
+   int * arr1 = new int [3];
+   int * arr2 = new int [3];
+  copy_array(arr1,arr2, n);
+
+
+   if(isequal_array(arr1,arr2,size1,size2)==1)
+      printf("일I치¡합O니쩒다쩤.\n");
+   else
+      printf("일I치¡하I지o 않uE습oA니쩒다쩤.\n");
+ 
+   return 0;
+}

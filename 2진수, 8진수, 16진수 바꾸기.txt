@@ -1,0 +1,28 @@
+#include <stdio.h>
+int ToHEX(int n);
+int main()
+{
+   int number,b;
+   printf("정수 : ");
+   scanf("%d",&number);
+   printf("진수선택<2, 8, 16> : ");
+   scanf("%d", &b);
+
+   if(b==2)
+      ToHEX(number);
+   if(b==8)
+      printf("10진수 : %d -> 8진수 : %o", number, number);
+   else if (b==16)
+      printf("10진수 : %d ->16진수 : %x", number,number);
+   return 0;
+}
+int ToHEX(int n)
+{
+   if(n==0||n==1)
+      printf("%d",n);
+   else
+   {
+   ToHEX(n/2);
+      printf("%d",n%2);
+   }
+   return 0;

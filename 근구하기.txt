@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+
+void main()
+{
+   float a, b, c, n, m1, m2, D;
+
+   while(1)
+   {
+      printf("세 정수를 입력하시오 : ");
+      scanf("%f %f %f", &a, &b, &c);
+
+      D=b*b-4*a*c;
+      n=sqrt(b*b-4*a*c);
+      m1=(-b+n)/2*a;
+      m2=(-b-n)/2*a;
+      
+      if(a==0)
+      {
+         if(b==0)
+         {
+            printf("근 X\n"); return;
+         }
+         else
+            printf("근 = %.2lf\n", (-c)/b);
+      }
+	  else
+      {
+         if(D>0)
+		 printf("서로 다른 실근 :  %.2lf, %.2lf\n", m1, m2);
+         if(D==0)
+		 printf("중근 : %.2lf\n", m1);
+		 
+	     if(D<0)
+            printf("복소근 : %.2lf, %.2lf\n", m1, m2);
+         
+      }
+   }
+}

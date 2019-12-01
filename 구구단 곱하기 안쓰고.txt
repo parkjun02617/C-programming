@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int multiple (int a, int b);
+
+int main(void) 
+{
+   int i[8]={2,3,4,5,6,7,8,9}; int j[8]={2,3,4,5,6,7,8,9};
+   int x; int y;
+   for(int x=0; x <8; ++x)
+   {
+      for (int y =0; y<8; ++y)
+      {
+         printf("%d * %d = %d\n", i[x], j[y], multiple(i[x], j[y]));
+      }
+
+      printf("---------\n");
+   }
+
+return 0;
+}
+
+int multiple (int a, int b)
+{
+   float sum=0; float k;
+   for(k=1; k<=b; k++)
+      sum += a;
+   return sum;
+}

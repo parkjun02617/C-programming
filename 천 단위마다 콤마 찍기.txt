@@ -1,0 +1,26 @@
+
+
+#include <stdio.h>
+#include <string.h>
+
+void main(void) {
+ int Length;
+ int i;
+ char number[8];
+ char *strNumber;
+ printf("숫자를 입력 후 Enter>:");
+ scanf("%s",number);
+
+ Length = strlen(number);
+ strNumber = number;
+
+ 
+ for(i=Length;i>0;) {
+  printf("%c",*strNumber++);
+  i--;
+  if(i>0 && (i%3)==0) {
+   printf(",");
+  }
+ }
+ printf("\n");
+}

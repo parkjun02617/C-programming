@@ -1,0 +1,47 @@
+#include <stdio.h>
+ void print_menu();
+ void get_menu_number();
+
+ void main()
+ {
+   print_menu();
+   get_menu_number();
+   
+ }
+
+ void print_menu()
+ {
+   printf("1. 햄버거\n");
+   printf("2. 치즈버거\n");
+   printf("3. 샌드위치\n");
+   printf("4. 종료\n");
+   printf("원하는 메뉴를 선택하시오.");
+ }
+
+ void get_menu_number()
+ {
+   int a;
+   scanf("%d", &a);
+   while (a > 4 || a < 0)
+   {
+      print_menu();
+      scanf("%d", &a);
+   }
+
+   if (a=1)
+   {printf("햄버거를 선택하셨습니다.\n");
+   print_menu();
+   scanf("%d", &a);
+   }
+   if (a=2)
+   {printf("치즈버거를 선택하셨습니다.\n");
+   print_menu();
+   scanf("%d", &a);
+   }
+   if (a=3)
+   {printf("샌드위치를 선택하셨습니다.\n");
+   print_menu();
+   scanf("%d", &a);
+   }
+
+ }

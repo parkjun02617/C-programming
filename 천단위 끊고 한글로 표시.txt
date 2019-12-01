@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+
+void main(void) {
+	int Length; int i; 
+	int u,b; int cnt =0;
+	char*unit[]= {"십", "백", "천"};
+	char* big [] = {"만"};
+	char* number1[] = {"일", "이", "삼", "사", "오", "육", "칠", "팔", "구"};
+	char number[9];
+	char *strNumber;
+
+
+	printf("숫자를 입력 후 Enter>:");
+	scanf("%s",number);
+
+	Length = strlen(number); //몇 개가 입력되었는지 개수 확인.
+	strNumber = number; //배열을 포인터로
+
+
+	for(i=Length;i>0;) {
+		printf("%c",*strNumber++);
+		i--;
+		if(i>0 && (i%3)==0)  {
+			printf(",");   } // i가 0보다 크고 3단위마다 끊어주기 때문에 두개가 중복일 때 마다 콤마 사용
+	}
+	printf("\n");
+
+ 	b=(Length-1)/4-1; //만 단위로 끊어주어야 하고 Length가 5일때부터 b 값이 0이 나온다 , 천 단위 까지는 Length 값이 -1
+	u=(Length%4==0)?2:Length%4-2;
+	for(i=0; i<Length; i++)
+	{
+		if(number[1]!='0')
+		{
+			printf("%s",number1[number[i]-'0'-1]);
+		}
+		if(u<0&&Length >0)
+		{
+			if((cnt||i==0)&&b>=0)
+			{printf("%s ",big[b]);
+			}
+			b--;
+			cnt=0;
+			u=2;
+		}
+		else
+		{
+			if(number[i]!='0')
+			{
+				printf("%s",unit[u]); cnt ++;
+			}
+			u--;
+		}
+	}
+	puts("");
+
+
+}

@@ -1,0 +1,109 @@
+문제 : 15문항의 4지 선다형 객관식 시험을 채점하여 o,x로 표시하고 점수를 출력하는 프로그램을 작성하여라.
+
+#include < stdio.h>
+
+int main (void)
+{
+   int a[10] = {1,2,3,4,3,2,1,2,4,2};
+   int s[10], t[10],q[10], o[10], u[10];
+   char d[10], y[10],w[10], p[10], h[10]; //10개씩 배열로 처리
+
+   printf("---------------------------------------\n");
+   printf("정답 :%d %d %d %d %d %d %d %d %d %d \n",a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9]);
+   printf("---------------------------------------\n");
+
+   printf("학생1 답지 : ");
+   scanf("%d",&s[0]);
+   scanf("%d",&s[1]);
+   scanf("%d",&s[2]);
+   scanf("%d",&s[3]);
+   scanf("%d",&s[4]);
+   scanf("%d",&s[5]);
+   scanf("%d",&s[6]);
+   scanf("%d",&s[7]);
+   scanf("%d",&s[8]);
+   scanf("%d",&s[9]);
+
+   printf("학생2 답지 : ");
+   scanf("%d",&t[0]);
+   scanf("%d",&t[1]);
+   scanf("%d",&t[2]);
+   scanf("%d",&t[3]);
+   scanf("%d",&t[4]);
+   scanf("%d",&t[5]);
+   scanf("%d",&t[6]);
+   scanf("%d",&t[7]);
+   scanf("%d",&t[8]);
+   scanf("%d",&t[9]);
+   printf("학생3 답지 : ");
+   scanf("%d",&q[0]);
+   scanf("%d",&q[1]);
+   scanf("%d",&q[2]);
+   scanf("%d",&q[3]);
+   scanf("%d",&q[4]);
+   scanf("%d",&q[5]);
+   scanf("%d",&q[6]);
+   scanf("%d",&q[7]);
+   scanf("%d",&q[8]);
+   scanf("%d",&q[9]);
+   printf("학생4 답지 : ");
+   scanf("%d",&o[0]);
+   scanf("%d",&o[1]);
+   scanf("%d",&o[2]);
+   scanf("%d",&o[3]);
+   scanf("%d",&o[4]);
+   scanf("%d",&o[5]);
+   scanf("%d",&o[6]);
+   scanf("%d",&o[7]);
+   scanf("%d",&o[8]);
+   scanf("%d",&o[9]);
+   printf("학생5 답지 : ");
+   scanf("%d",&u[0]);
+   scanf("%d",&u[1]);
+   scanf("%d",&u[2]);
+   scanf("%d",&u[3]);
+   scanf("%d",&u[4]);
+   scanf("%d",&u[5]);
+   scanf("%d",&u[6]);
+   scanf("%d",&u[7]);
+   scanf("%d",&u[8]);
+   scanf("%d",&u[9]);
+   printf("---------------------------------------\n");   
+   int i,score1 = 0,j, score2=0,k,score3=0,l,score4=0, g,score5=0;
+   for (i=0;i<10;i++)  //FOR문과 IF ELSE문으로 반복되는 부분을 처리함.
+      {if(s[i] == a[i])
+         (score1 +=4,d[i] = 'O');
+      else (d[i] ='X');}
+   
+   for (j=0;j<10;j++)
+      {if(t[j] == a[j])
+         (score2 +=4,y[j] = 'O');
+      else (y[j] = 'X');}
+   
+   for (k=0;k<10;k++)
+      {if(q[k] == a[k])
+         (score3 +=4,w[k] = 'O');
+      else (w[k] = 'X');}
+   
+   for (l=0;l<10;l++)
+      {if(o[l] == a[l])
+         (score4 +=4,p[l] = 'O');
+      else (p[l] = 'X');}
+   
+   for (g=0;g<10;g++)
+      {if(u[g] == a[g])
+         (score5 +=4,h[g] = 'O');
+      else (h[g] = 'X');}
+
+   printf("채점결과\n학생1 : %c %c %c %c %c %c %c %c %c %c 합계 = %d\n",d[0], d[1], d[2], d[3], d[4], d[5], d[6], d[7], d[8], d[9],score1);
+   printf("학생2 : %c %c %c %c %c %c %c %c %c %c 합계 = %d\n",y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], y[8], y[9],score2);
+   printf("학생3 : %c %c %c %c %c %c %c %c %c %c 합계 = %d\n",w[0], w[1], w[2], w[3], w[4], w[5], w[6], w[7], w[8], w[9],score3);
+   printf("학생4 : %c %c %c %c %c %c %c %c %c %c 합계 = %d\n",p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9],score4);
+   printf("학생5 : %c %c %c %c %c %c %c %c %c %c 합계 = %d\n",h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], h[9],score5);
+   printf("---------------------------------------\n");
+   float sum= score1 + score2+ score3+ score4 +score5;
+   float ave= (score1 + score2+ score3+score4+ score5)/5.0;
+   printf(" 총합 : %.1f, 평균 : %.1f\n",sum,ave);
+
+   return 0;
+}

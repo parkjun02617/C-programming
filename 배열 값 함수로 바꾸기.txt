@@ -1,0 +1,30 @@
+#include <stdio.h>
+void Swap(int *pA, int*pB);
+
+	int main (void)
+{
+	int a[5]={1,2,3,4,5}; int i;
+	int b[5]={5,4,3,2,1};
+	int Size;
+
+	for(i=0; i<5; i++)
+	{
+	Swap(a+i,b+i);
+	printf("a[%d]의 값 : %d, b[%d]의 값 : %d\n",i,a[i],i,b[i]);
+	}
+	return 0;
+	
+
+
+}
+
+
+void Swap(int *pA, int*pB)
+{ 
+	int temp;
+	temp = *pA;
+	*pA= *pB;
+	*pB= temp;
+	
+}
+ 

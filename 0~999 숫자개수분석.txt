@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main(void)
+{
+	int a=0; int b=0; int c[10]={0}; int i=0; int j=0;
+ printf("Enter range start and end\n");
+ printf("<possible range 0 ~ 999> : ");
+ scanf("%d %d", &a, &b);
+
+ for(i=a; i<=b; i++)
+ {
+	 if(0<=i&&i<=9)
+	 {
+		 for(j=0; j<=9; j++)
+		 {
+	       if(i%10==j)
+			   c[j]+=1;}
+	 }
+	 if(10<=i&&i<=99)
+	 {
+		 for(j=0; j<=9; j++)
+		 {
+			 if(i%10==j)
+				 c[j]+=1;
+			 if(i/10==j)
+				 c[j]+=1;
+		 }
+	 }
+	 if(100<=i&&i<=999)
+	 {
+		 for(j=0; j<=9; j++)
+		 {
+			 if(i/100==j)
+				 c[j]+=1;
+			 if((i/10)%10==j)
+				 c[j]+=1;
+			 if(i%10==j)
+				 c[j]+=1;
+		 }
+	 }
+
+	 
+ }
+
+ for(j=0; j<=9; j++)
+	 {
+		 printf("%d : %d\n" , j, c[j]);
+	 }
+	 return 0;
+ }
